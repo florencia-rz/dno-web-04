@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Clase 04</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+            <a href="page-1.html">Body Pose</a>
+            <a href="page-2.html" >Body Segmentation</a>
+            <a href="page-3.html">Hand Pose</a>
+            <a href="page-4.html">FaceMesh</a>
+            <style>
+                canvas {
+                display: block;
+                box-shadow: 0 0 0 lightpink;
+            }
+            </style>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+        </header>
+        <main></main>
+        <script>
+            var texto = {
+                saludo: [ "Welcome to the real world, it's suck. You gonna love it!", "oh, hi", "it's me, hi", "Buenos días estrellitas, ¡La tierra les dice hola!"],
+                nombre: "Me llamo Florencia Rodríguez 🌼",
+                motivo: "Sigo en este curso porque con las pocas clases que hemos tenido, he podido notar mi avance de aprendizajes y de entender una logica que al principio encontraba muy compleja (aún un poco😅). Pero tengo fe en que cada semana iré entendiendo más y al finalizar el semestre ya no tendré la lejanía y temor que tenía antes de tomar este curso. Además creo que las dinámcias de las clases y evaluaciones en este horairo está siendo súper compatible con mi carga del semestre, especialmente considerando que estoy trabajando en mi proyecto de título",
+            };
+            var saludando, nombrando, motivando;
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                saludando = select("h1");
+                saludando.html(random(texto.saludo));
+                nombrando = select("h2");
+                nombrando.html(texto.nombre);
+                motivando = select("#aqui");
+                motivando.html(texto.motivo);
+            }
+            function draw() {
+                //repita este background en el style.css
+                background("#AD1457");
+                textSize(48);
+                text("🌸", mouseX, mouseY);
+            }
+            function windowResized() {
+                //repita un mismo background en el style.css y en todos los script
+                background("AD1457");
+                resizeCanvas(windowWidth, windowHeight);
+            }
+        </script>
+    </body>
+</html>
